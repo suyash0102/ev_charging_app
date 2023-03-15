@@ -1,5 +1,6 @@
 import 'package:ev_charging_app/screens/home_screen/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import '../../components/left_drawer.dart';
 import '../../constants.dart';
@@ -28,6 +29,8 @@ class _HomeState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    var initializationSettingsAndroid =
+    new AndroidInitializationSettings('@mipmap/ic_launcher');
     // user = widget.user;
     // userId=user.userID;
   }
@@ -45,7 +48,7 @@ const HomePage(),
           drawer: LeftDrawer(),
           appBar: AppBar(
             title: const Text(
-              'Sinewave',
+              'SineWave',
               style: TextStyle(fontFamily: 'Rubik', color: Colors.white),
             ),
             iconTheme: const IconThemeData(color: Colors.white),

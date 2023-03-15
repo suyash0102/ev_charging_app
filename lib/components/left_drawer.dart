@@ -1,3 +1,5 @@
+import 'package:ev_charging_app/reminder_module/pages/home_page.dart';
+import 'package:ev_charging_app/screens/my_vehicles_screen.dart';
 import 'package:ev_charging_app/screens/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
@@ -70,7 +72,16 @@ class LeftDrawer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: size.width * 0.05),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MyVehiclesScreen();
+                    },
+                  ),
+                );
+              },
               child: Row(
                 children: [
                   Icon(
@@ -99,7 +110,16 @@ class LeftDrawer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: size.width * 0.05),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const ReminderHomePage();
+                    },
+                  ),
+                );
+              },
               child: Row(
                 children: [
                   Icon(

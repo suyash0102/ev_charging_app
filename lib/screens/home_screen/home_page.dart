@@ -1,4 +1,5 @@
 import 'package:ev_charging_app/components/progress_bar.dart';
+import 'package:ev_charging_app/reminder_module/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             SizedBox(
-              height: size.height * 0.01,
+              height: size.height * 0.005,
             ),
             Align(
               alignment: Alignment.center,
@@ -61,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const ProgressArea(),
             SizedBox(
-              height: size.height * 0.04,
+              height: size.height * 0.02,
             ),
             // Center(
             //     child: SizedBox(
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
               child: Stack(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(size.width * 0.03),
+                    padding: EdgeInsets.all(size.width * 0.02),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -107,16 +108,8 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.black),
                           ),
                         ),
-                        SizedBox(
-                          height: size.height * 0.016,
-                        ),
                         Row(
                           children: [
-                            Icon(
-                              Icons.info,
-                              color: Colors.red,
-                              size: size.width * 0.12,
-                            ),
                             SizedBox(
                               width: size.width * 0.01,
                             ),
@@ -124,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Battery Specification :  3kWh',
+                                  'Battery Specs :  3kWh',
                                   style: TextStyle(
                                     fontFamily: 'Rubik',
                                     fontWeight: FontWeight.w300,
@@ -148,8 +141,32 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ],
-                            )
+                            ),
+                            SizedBox(width: size.width*0.07,),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const ReminderHomePage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.alarm,
+                                    color: Colors.red,
+                                    size: size.width * 0.12,
+                                  ),
+                                  Text("Set Reminder")
+                                ],
+                              ),
+                            ),
                           ],
+
                         ),
                       ],
                     ),
